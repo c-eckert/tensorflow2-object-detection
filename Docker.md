@@ -95,6 +95,9 @@ Change Dockerfile like in Repo
 ```
 # From the root of the git repository
 docker build -f research/object_detection/dockerfiles/tf2/Dockerfile -t od .
+# With Data from a level higher
+docker build -f models/research/object_detection/dockerfiles/tf2/Dockerfile -t od .
+
 ```
 
 **Run Container**
