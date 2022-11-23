@@ -105,6 +105,28 @@ docker build -f models/research/object_detection/dockerfiles/tf2/Dockerfile -t o
 docker run --gpus all -it od
 ```
 
+**File Structure**
+```
+|\_models (cloned tf-od repo)
+|\_scripts
+|   \_scripts
+|      \_preprocessing
+|         \_generate_tfrecord.py
+\_workspace
+   \_training_demo
+      |\_annotations
+      |  \_label_map.pbtxt
+      |\_images
+      |  \_test (all jpg and xml Files)
+      |  \_train
+      |\_model_main_tf2.py
+      \_pre-trained-models
+        \_ssd_mobilenet_v1_fpn_640x640_coco17_tpu-8
+          \_checkpoint (cp)
+          \_pipeline.config
+          \_saved_model (.pb)
+```
+
 **Test the Installation**
 ```
 python object_detection/builders/model_builder_tf2_test.py
